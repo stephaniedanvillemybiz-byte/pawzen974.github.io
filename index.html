@@ -33,12 +33,7 @@
     .b2{width:190px;height:190px;background:#b7e8e4;left:-40px;bottom:-60px}
     .tag{position:absolute;left:22px;top:22px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-weight:800;color:var(--muted);box-shadow:0 8px 24px rgba(20,52,59,.05);z-index:2}
     .hero-art{position:relative;z-index:1;height:100%;display:grid;place-items:center}
-    .badge{
-      width:min(360px,82%);aspect-ratio:1/1;border-radius:50%;
-      background:linear-gradient(145deg,#2d8f8b,#63c1be);
-      box-shadow:inset 0 10px 24px rgba(255,255,255,.18),0 32px 70px rgba(45,143,139,.25);
-      display:grid;place-items:center;color:#fff;font-size:clamp(5rem,13vw,8.5rem)
-    }
+    .badge{width:min(360px,82%);aspect-ratio:1/1;border-radius:50%;background:linear-gradient(145deg,#2d8f8b,#63c1be);box-shadow:inset 0 10px 24px rgba(255,255,255,.18),0 32px 70px rgba(45,143,139,.25);display:grid;place-items:center;color:#fff;font-size:clamp(5rem,13vw,8.5rem)}
     .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 0}
     .stat,.card,.panel,.product{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 12px 34px rgba(20,52,59,.05)}
     .stat{padding:18px}.stat strong{display:block;font-size:1.5rem}.stat span{color:var(--muted)}
@@ -65,3 +60,77 @@
   </style>
 </head>
 <body>
+  <div class="container">
+    <header class="topbar">
+      <div class="brand"><div class="icon">🐾</div><div>Pawzen974</div></div>
+      <nav>
+        <a href="#categories">Catégories</a>
+        <a href="#produits">Produits</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="cart">Panier (0)</div>
+    </header>
+
+    <main class="hero">
+      <section>
+        <h1>Des accessoires doux, utiles et stylés pour vos animaux.</h1>
+        <p>Pawzen974 est une boutique en ligne pensée pour les chiens et les chats à La Réunion. Tu peux présenter tes produits, recevoir des commandes et guider tes clients vers WhatsApp en un clic.</p>
+        <div class="actions">
+          <a class="btn primary" href="#produits">Voir la boutique</a>
+          <a class="btn secondary" href="#contact">Commander sur WhatsApp</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>Livraison</strong><span>Locale & rapide</span></div>
+          <div class="stat"><strong>Design</strong><span>Pro & rassurant</span></div>
+          <div class="stat"><strong>Mobile</strong><span>Parfaitement adapté</span></div>
+        </div>
+      </section>
+
+      <aside class="hero-card">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="tag">Boutique en ligne</div>
+        <div class="hero-art"><div class="badge">🐾</div></div>
+      </aside>
+    </main>
+
+    <section class="section" id="categories">
+      <h2>Catégories</h2>
+      <div class="categories">
+        <article class="card"><div class="emoji">🦴</div><h3>Promenade</h3><p>Harnais, colliers et laisses confortables.</p></article>
+        <article class="card"><div class="emoji">🍽️</div><h3>Repas</h3><p>Gamelles et accessoires pratiques.</p></article>
+        <article class="card"><div class="emoji">🛏️</div><h3>Repos</h3><p>Paniers et coussins doux.</p></article>
+        <article class="card"><div class="emoji">🎾</div><h3>Jeux</h3><p>Jouets pour les divertir au quotidien.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="produits">
+      <h2>Produits populaires</h2>
+      <div class="products">
+        <article class="product"><div class="photo">🦴</div><div class="body"><strong>Harnais confort</strong><p>Réglable, doux et sécurisé.</p><div class="price"><strong>24,90 €</strong><a class="mini-btn" href="#contact">Ajouter</a></div></div></article>
+        <article class="product"><div class="photo">🍽️</div><div class="body"><strong>Gamelle anti-glisse</strong><p>Idéale pour les repas à la maison.</p><div class="price"><strong>14,90 €</strong><a class="mini-btn" href="#contact">Ajouter</a></div></div></article>
+        <article class="product"><div class="photo">🛏️</div><div class="body"><strong>Panier douillet</strong><p>Un coin repos rassurant.</p><div class="price"><strong>39,90 €</strong><a class="mini-btn" href="#contact">Ajouter</a></div></div></article>
+        <article class="product"><div class="photo">🎾</div><div class="body"><strong>Jouet interactif</strong><p>Pour les stimuler et les occuper.</p><div class="price"><strong>12,90 €</strong><a class="mini-btn" href="#contact">Ajouter</a></div></div></article>
+      </div>
+    </section>
+
+    <section class="section split" id="apropos">
+      <div class="panel"><h2>À propos</h2><p>Pawzen974 est une marque locale pensée pour une expérience simple et propre, avec une identité plus visuelle et plus vendeuse.</p></div>
+      <div class="panel" id="contact">
+        <h2>Contact</h2>
+        <p>Ajoute ici ton numéro WhatsApp, ton email et ton Instagram.</p>
+        <div class="list">
+          <div>Email : contact@pawzen974.re</div>
+          <div>Instagram : @pawzen974</div>
+          <div>WhatsApp : +262 …</div>
+        </div>
+      </div>
+    </section>
+
+    <footer><div>© 2026 Pawzen974</div><div>Boutique en ligne d’accessoires pour animaux</div></footer>
+  </div>
+
+  <a class="whatsapp" href="https://wa.me/262XXXXXXXXX?text=Bonjour%20Pawzen974%20%2C%20je%20veux%20commander" target="_blank" rel="noopener">💬</a>
+</body>
+</html>
