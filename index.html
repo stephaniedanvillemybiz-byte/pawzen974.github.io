@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pawzen974 | Boutique d’accessoires pour animaux</title>
+  <meta name="description" content="Pawzen974, boutique en ligne d’accessoires pour chiens et chats à La Réunion." />
+  <style>
+    :root{
+      --bg:#f5fbfa;
+      --card:#ffffff;
+      --text:#16343b;
+      --muted:#67808a;
+      --brand:#2d8f8b;
+      --brand2:#f2c78f;
+      --line:#e1eceb;
+      --shadow:0 18px 50px rgba(20,52,59,.08);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,Arial,sans-serif;
+      background:radial-gradient(circle at top,#ffffff 0,#f5fbfa 38%,#edf7f6 100%);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1200px;margin:0 auto;padding:24px}
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:center;
+      padding:8px 0 22px;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      font-size:1.2rem;
+      letter-spacing:.2px;
+    }
+    .brand .icon{
+      width:46px;height:46px;border-radius:16px;
+      background:linear-gradient(135deg,var(--brand),#59b7b3);
+      color:#fff;display:grid;place-items:center;
+      box-shadow:0 10px 30px rgba(45,143,139,.24);
+      font-size:22px;
+    }
+    nav{
+      display:flex;gap:16px;flex-wrap:wrap;
+      color:var(--muted);font-weight:700;
+    }
+    .cart{
+      background:#fff;border:1px solid var(--line);
+      border-radius:999px;padding:10px 16px;font-weight:700;
+      box-shadow:0 8px 24px rgba(20,52,59,.05);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:center;
+      padding:20px 0 10px;
+    }
+    .hero h1{
+      margin:0 0 14px;
+      font-size:clamp(2.5rem,6vw,4.8rem);
+      line-height:1;
+      letter-spacing:-1px;
+    }
+    .hero p{
+      margin:0;
+      max-width:58ch;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:1.05rem;
+    }
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+    .btn{
+      padding:14px 20px;
+      border-radius:14px;
+      font-weight:800;
+      border:1px solid transparent;
+      display:inline-block;
+    }
+    .btn.primary{
+      background:var(--brand);
+      color:#fff;
+      box-shadow:0 14px 30px rgba(45,143,139,.2);
+    }
+    .btn.secondary{
+      background:#fff;
+      border-color:var(--line);
+    }
+
+    .showcase{
+      position:relative;
+      min-height:520px;
+      border-radius:32px;
+      overflow:hidden;
+      background:linear-gradient(180deg,#fff,#eef9f7);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .blob{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(4px);
+      opacity:.4;
+    }
+    .b1{width:220px;height:220px;background:#ffdfb4;right:-30px;top:-40px}
+    .b2{width:180px;height:180px;background:#b8e7e4;left:-40px;bottom:-60px}
+    .mock{
+      position:relative;
+      z-index:1;
+      height:100%;
+      display:grid;
+      place-items:center;
+    }
+    .circle{
+      width:min(320px,78%);
+      aspect-ratio:1/1;
+      border-radius:50%;
+      background:linear-gradient(145deg,#2d8f8b,#63c1be);
+      box-shadow:inset 0 10px 24px rgba(255,255,255,.18), 0 30px 70px rgba(45,143,139,.25);
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-size:clamp(5rem,12vw,8rem);
+    }
+    .tag{
+      position:absolute;
+      left:22px;top:22px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:700;
+      color:var(--muted);
+      box-shadow:0 8px 24px rgba(20,52,59,.05);
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin:18px 0 0;
+    }
+    .stat, .card, .panel, .product{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 12px 34px rgba(20,52,59,.05);
+    }
+    .stat{
+      padding:18px;
+    }
+    .stat strong{display:block;font-size:1.5rem}
+    .stat span{color:var(--muted)}
+
+    .section{padding:42px 0 0}
+    .section h2{margin:0 0 18px;font-size:1.85rem}
+
+    .categories{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .card{
+      padding:18px;
+      min-height:140px;
+    }
+    .card .emoji{
+      width:52px;height:52px;border-radius:16px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,#e8f6f5,#fff1dd);
+      font-size:24px;
+      margin-bottom:14px;
+    }
+    .card h3{margin:0 0 8px}
+    .card p{margin:0;color:var(--muted);line-height:1.55}
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .product{
+      overflow:hidden;
+    }
+    .photo{
+      height:190px;
+      background:linear-gradient(180deg,#eaf8f7,#fff3e1);
+      display:grid;
+      place-items:center;
+      font-size:64px;
+    }
+    .product .body{padding:16px}
+    .product p{margin:8px 0 12px;color:var(--muted);line-height:1.55}
+    .price{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    .price strong{font-size:1.05rem;color:var(--brand)}
+    .mini-btn{
+      padding:10px 14px;
+      border-radius:12px;
+      background:var(--brand);
+      color:#fff;
+      font-weight:800;
+      font-size:.95rem;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .panel{
+      padding:22px;
+    }
+    .panel p{
+      color:var(--muted);
+      line-height:1.7;
+    }
+    .list{
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+    .list div{
+      padding:14px 16px;
+      border-radius:16px;
+      background:#f8fbfb;
+      border:1px solid var(--line);
+      font-weight:700;
+    }
+
+    footer{
+      padding:36px 0 24px;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:40px;
+    }
+
+    @media (max-width:980px){
+      .hero,.split,.categories,.products,.stats{grid-template-columns:1fr 1fr}
+      .hero{grid-template-columns:1fr}
+      .showcase{min-height:380px}
+    }
+    @media (max-width:640px){
+      .categories,.products,.stats,.split{grid-template-columns:1fr}
+      .container{padding:18px}
+      .topbar{align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <div class="brand">
+        <div class="icon">🐾</div>
+        <div>Pawzen974</div>
+      </div>
+      <nav>
+        <a href="#categories">Catégories</a>
+        <a href="#produits">Produits</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="cart">Panier (0)</div>
+    </header>
+
+    <main class="hero">
+      <section>
+        <h1>Tout pour leur confort, avec style.</h1>
+        <p>Pawzen974 propose des accessoires pour chiens et chats pensés pour le quotidien : promenade, repas, repos et jeux. Une boutique simple, douce et pratique, conçue pour vendre en ligne à La Réunion.</p>
+        <div class="actions">
+          <a class="btn primary" href="#produits">Découvrir la boutique</a>
+          <a class="btn secondary" href="#contact">Demander un devis</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>100%</strong><span>pensé pour mobile</span></div>
+          <div class="stat"><strong>4</strong><span>catégories principales</span></div>
+          <div class="stat"><strong>1</strong><span>marque locale forte</span></div>
+        </div>
+      </section>
+
+      <aside class="showcase">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="tag">Boutique en ligne</div>
+        <div class="mock">
+          <div class="circle">🐾</div>
+        </div>
+      </aside>
+    </main>
+
+    <section class="section" id="categories">
+      <h2>Catégories</h2>
+      <div class="categories">
+        <article class="card">
+          <div class="emoji">🦴</div>
+          <h3>Promenade</h3>
+          <p>Colliers, harnais et laisses confortables pour les sorties.</p>
+        </article>
+        <article class="card">
+          <div class="emoji">🍽️</div>
+          <h3>Repas</h3>
+          <p>Gamelles, distributeurs et accessoires pratiques.</p>
+        </article>
+        <article class="card">
+          <div class="emoji">🛏️</div>
+          <h3>Repos</h3>
+          <p>Paniers, coussins et solutions bien-être.</p>
+        </article>
+        <article class="card">
+          <div class="emoji">🎾</div>
+          <h3>Jeux</h3>
+          <p>Jouets interactifs et articles pour les garder actifs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="produits">
+      <h2>Produits populaires</h2>
+      <div class="products">
+        <article class="product">
+          <div class="photo">🦴</div>
+          <div class="body">
+            <strong>Harnais confort</strong>
+            <p>Réglable, doux et sécurisé pour les promenades.</p>
+            <div class="price">
+              <strong>24,90 €</strong>
+              <a class="mini-btn" href="#contact">Ajouter</a>
+            </div>
+          </div>
+        </article>
+        <article class="product">
+          <div class="photo">🍽️</div>
+          <div class="body">
+            <strong>Gamelle anti-glisse</strong>
+            <p>Idéale pour les repas à la maison.</p>
+            <div class="price">
+              <strong>14,90 €</strong>
+              <a class="mini-btn" href="#contact">Ajouter</a>
+            </div>
+          </div>
+        </article>
+        <article class="product">
+          <div class="photo">🛏️</div>
+          <div class="body">
+            <strong>Panier douillet</strong>
+            <p>Un coin repos rassurant et confortable.</p>
+            <div class="price">
+              <strong>39,90 €</strong>
+              <a class="mini-btn" href="#contact">Ajouter</a>
+            </div>
+          </div>
+        </article>
+        <article class="product">
+          <div class="photo">🎾</div>
+          <div class="body">
+            <strong>Jouet interactif</strong>
+            <p>Pour les stimuler et les occuper au quotidien.</p>
+            <div class="price">
+              <strong>12,90 €</strong>
+              <a class="mini-btn" href="#contact">Ajouter</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" id="apropos">
+      <div class="panel">
+        <h2>À propos</h2>
+        <p>Pawzen974 est une boutique pensée pour les amoureux des animaux à La Réunion. Le site met l’accent sur la simplicité, la lisibilité et une identité visuelle douce pour inspirer confiance dès la première visite.</p>
+      </div>
+      <div class="panel" id="contact">
+        <h2>Contact</h2>
+        <p>Tu peux utiliser cette zone pour mettre ton WhatsApp, ton email ou un formulaire de contact.</p>
+        <div class="list">
+          <div>Email : contact@pawzen974.re</div>
+          <div>Instagram : @pawzen974</div>
+          <div>Livraison : Réunion</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2026 Pawzen974</div>
+      <div>Boutique en ligne d’accessoires pour animaux de compagnie</div>
+    </footer>
+  </div>
+</body>
+</html>
